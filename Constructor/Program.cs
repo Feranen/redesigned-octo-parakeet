@@ -1,4 +1,5 @@
 ﻿using Constructor.Models;
+using Constructor.Services;
 using System.Xml.Linq;
 
 namespace Constructor
@@ -29,27 +30,41 @@ namespace Constructor
             //// Deep copy. Create new object 
             //Student student4 = new Student(student2.name, student2.age, student2.average);
 
+            // -------------------------------------------------
 
-            List<Plant> Plants = new List<Plant>();
+            //List<Plant> Plants = new List<Plant>();
 
-            Plants.Add(new Plant("Rosa", 15.5, 5));
-            Plants.Add(new Plant("Klon", 15.5, 5));
-            Plants.Add(new Plant("Bratki", 10.5, 2));
-            Plants.Add(new Plant("Rosa3000", 335.5, 55));
-            foreach (var plant in Plants)
-            {
-                double grow = rnd.Next(2);
-                if (grow == 1)
-                {
-                    plant.Grow();
-                }
-            }
+            //Plants.Add(new Plant("Rosa", 15.5, 5));
+            //Plants.Add(new Plant("Klon", 15.5, 5));
+            //Plants.Add(new Plant("Bratki", 10.5, 2));
+            //Plants.Add(new Plant("Rosa3000", 335.5, 55));
+            //foreach (var plant in Plants)
+            //{
+            //    double grow = rnd.Next(2);
+            //    if (grow == 1)
+            //    {
+            //        plant.Grow();
+            //    }
+            //}
 
-            foreach (var plant in Plants)
-            {
-                plant.ShowInfo();
-            }
+            //foreach (var plant in Plants)
+            //{
+            //    plant.ShowInfo();
+            //}
+            // -------------------------------------------------
 
+
+            StudentManager manager = new StudentManager();
+
+            manager.AddStudent(new Student("Ann", 15, 4.8));
+            manager.AddStudent(new Student("Ann1", 15, 4.1));
+            manager.AddStudent(new Student("Ann2", 15, 1.5));
+
+            manager.ShowAll();
+
+            double classAverage = manager.GetClassAverage();
+
+            Console.WriteLine($"Class average: {classAverage}");
         }
     }
 }
