@@ -36,5 +36,19 @@ namespace Constructor.Services
 
             return average;
         }
+        public Student GetBestAverage()
+        {
+            double bestAverage = -1;
+            Student BestStudent = null;
+            foreach (Student student in students)
+            {
+                if (student.average > bestAverage)
+                {
+                    bestAverage = student.average;
+                    BestStudent = student;
+                }
+            }
+            return BestStudent;
+        }
     }
 }

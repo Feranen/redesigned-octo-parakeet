@@ -63,8 +63,10 @@ namespace Constructor
             manager.ShowAll();
 
             double classAverage = manager.GetClassAverage();
+            Student bestAverageStudent = manager.GetBestAverage();
 
             Console.WriteLine($"Class average: {classAverage}");
+            Console.WriteLine($"Best average: {bestAverageStudent.GetInfo()}");
         }
     }
 }

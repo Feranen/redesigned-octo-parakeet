@@ -20,9 +20,13 @@ namespace Constructor.Models
             this.age = age;
             this.average = average;
         }
+        public string GetInfo()
+        {
+            return $"{this.name}, wiek {this.age}, średnia: {average}";
+        }
         public void ShowInfo()
         {
-            Console.WriteLine($"{this.name}, tel: {phone}, wiek {this.age}, średnia: {average}");
+            Console.WriteLine(GetInfo());
         }
     }
 }
